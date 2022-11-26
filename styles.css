@@ -1,0 +1,288 @@
+/* TYPOGRAPHY */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+}
+h1,h2,h3,p{
+    margin-bottom: 1.125em;
+}
+.website--title h1{
+    font-size: 2rem ;
+    font-family: 'Lora', serif;
+    color: #143774;
+    font-weight: 400;
+    margin-bottom: 0;
+}  
+.website--title p{
+    color: #1792D2;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: 0.20em;
+}
+
+.article--title{
+    font-size: 1.5rem;
+    color: #143774;
+    font-family: 'Lora',serif;
+}
+.widget-body{
+    padding: 1em;
+}
+
+.widget-img,.widget-title,.widget-recent-post-title{
+    padding: 0.725em 0.725em 0 0.725em ;
+}
+
+.widget-recent-post-title{
+    font-size: 1rem;
+    color: #143774;
+    font-family: 'Lora',serif;
+    padding-bottom: 0;
+}
+
+.widget-recent-post{
+    padding: 1.125em;
+}
+
+.article-read-more{
+    font-size: 0.875rem;
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: bold;
+    color: #1792D2;
+    text-decoration: none;  
+}
+
+.article-read-more:hover,
+.article-read-more:focus{
+    color: #143774;
+    text-decoration: underline;
+}
+
+.article--body{
+    font-size: 1.125rem;
+    color: #707070;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.article--info{
+    font-size: 0.875rem;
+    color: #707070;
+    font-weight: light;
+}
+
+.bold{
+    font-weight: bold;
+}
+a{
+    color: #1792D2;
+    text-decoration: underline;
+}
+a:hover,
+a:focus{
+    color: #143774;
+}
+
+header{
+    background-color: #f8f8f8;
+    padding: 1.5em 0;
+    text-align: center;
+}
+
+/* LAYOUT */
+
+.container{
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.container--flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+nav{
+    padding: 1.5em 0; 
+} 
+
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul li a{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #707070;
+    text-decoration: none;
+    margin-left: 2em ;
+}
+
+nav li{
+    padding: 0.5em 0;
+}
+
+nav a:hover{
+    color: #1792D2;
+}
+.current--page{
+    border-bottom: 1px solid #707070;
+}
+.current--page:hover{
+    color: #707070;
+}
+
+@media (min-width:723px) {
+    .container--flex{
+        display: flex;
+        flex-direction: row;
+    }
+
+    ul{
+        flex-direction: row;
+    }
+    main{
+        width: 70%;
+    }
+    aside{
+        width:25%;
+        /* min-width is there to prevent having really small widgets */
+        min-width: 200px;
+        margin-left: 1em;
+    }  
+    .sidebar-widget{
+        margin-bottom: 3em;
+    }
+}
+/*    main home section    */
+section{
+    margin: 2em 0;
+}
+
+.article--image,.article-recent-img,.widget-img{
+    width: 100%;
+    display: block;
+}
+
+.sidebar-widget{
+    border: 1.5em solid #EBEBEB;
+}
+
+.widget-recent-post{
+    border-bottom: 1px solid #EBEBEB;
+}
+
+/*last child is the last element existing in widget-recent-post*/
+/* that element could be a div which is our case or any html element like a p h1 ...*/
+.widget-recent-post:last-child{
+    border: 0;
+}
+
+.article--featured{
+    border-bottom: 2px solid #707070;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+}
+
+.article--recent{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+
+
+/*About modifications*/
+
+.about--image{
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 2em;
+}
+
+.about-story{
+    color: #1792D2;
+    font-size: 1.2em;
+    font-family:'ubuntu';
+    font-weight: 700;
+}
+
+.about--section{
+    border: 0;
+    margin-bottom: 0;
+}
+
+@media (min-width:723px){
+    .article--recent{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 2em;
+    }
+    .article-recent-img{
+        min-height: 205px;
+        object-fit: cover;
+    }
+    .article-recent-left{
+        width: 40%;
+    }
+    .article-recent-right{
+        width: 58%;
+    }
+}
+
+/* footer */
+
+footer{
+    background-color: #143774;
+    color: white;
+    padding: 2em;
+    text-align: center;
+}
+
+/*
+
+To change the order of elements (exp:div class="container") 
+we set our container class to display flex and then we specify 
+the order of the element by giving the lowest number to the element
+that we want it to be displayed first >>>>>>
+________html:
+<div class="container">
+    <h2 class="container--title">Learn RWD</h2>
+    <img src="img.png" class="container--image"/>
+</div>
+________css:
+
+.container{
+    display:flex
+}
+.container--title{
+    order:2
+}
+.container--image{
+    order:1
+}
+ps: we can use negative numbers 
+
+*/
+
+
+/*
+To have an image with a specified height but a good resolution >>>>
+_____css:
+img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+We can add object-position:left (by default:center) if we need to
+IT DEPENDS ON OUR NEEDS
+*/
